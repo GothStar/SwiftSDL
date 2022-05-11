@@ -29,6 +29,12 @@ public final class SDLRenderer {
         self.internalPointer = try internalPointer.sdlThrow(type: type(of: self))
     }
     
+    public init(surface: SDLSurface) throws {
+        
+        let internalPointer = SDL_CreateSoftwareRenderer(surface.internalPointer)
+        self.internalPointer = try internalPointer.sdlThrow(type: type(of: self))
+    }
+    
     /// The color used for drawing operations (Rect, Line and Clear).
     public func drawColor() throws -> (red: UInt8, green: UInt8, blue: UInt8, alpha: UInt8) {
         
