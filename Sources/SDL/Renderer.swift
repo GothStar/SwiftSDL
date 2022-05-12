@@ -88,6 +88,12 @@ public final class SDLRenderer {
         try SDL_RenderSetLogicalSize(internalPointer, width, height).sdlThrow(type: type(of: self))
     }
     
+    /// Set a device independent resolution for rendering
+    public func setScale(x: Float, y: Float) throws {
+        
+        try SDL_RenderSetScale(internalPointer, x, y).sdlThrow(type: type(of: self))
+    }
+    
     // MARK: - Methods
     
     /// Clear the current rendering target with the drawing color
