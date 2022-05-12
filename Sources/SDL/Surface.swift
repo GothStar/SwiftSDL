@@ -30,6 +30,12 @@ public final class SDLSurface {
         self.internalPointer = try internalPointer.sdlThrow(type: type(of: self))
     }
     
+    /// Create an RGB surface from a SDL_Surface.
+    public init(surface: UnsafeMutablePointer<SDL_Surface>) throws {
+        
+        self.internalPointer = surface
+    }
+    
     // Get the SDL surface associated with the window.
     ///
     /// A new surface will be created with the optimal format for the window,
